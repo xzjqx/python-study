@@ -25,7 +25,7 @@ def backup(filepath):
     # print from_dir
     from_dir = 'G:\\'
     # backup_time
-    back_time = time.strftime(u'%Y-%m-%d')
+    back_time = time.strftime(u'%Y-%m-%d_%H:%M')
 
     to_dir = filepath + u':\\backup'
     if not os.path.exists(to_dir):
