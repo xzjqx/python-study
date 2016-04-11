@@ -21,11 +21,9 @@ def GetFileList(dir, fileList):
 
 def backup(filepath):
 
-    from_dir = []
-    # print from_dir
     from_dir = 'G:\\'
     # backup_time
-    back_time = time.strftime(u'%Y-%m-%d_%H:%M')
+    back_time = time.strftime(u'%Y-%m-%d_%H-%M')
 
     to_dir = filepath + u':\\backup'
     if not os.path.exists(to_dir):
@@ -37,7 +35,9 @@ def backup(filepath):
 
     if not os.path.exists(target):
         zip = zipfile.ZipFile(target, 'a', ZIP_DEFLATED)
+        print u'Finding files ...'
         file = GetFileList(from_dir, [])
+        print u'Zipping...'
         for f in file:
             zip.write(f)
         print u'Done.'
