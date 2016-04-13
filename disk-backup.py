@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import time
 import datetime
 import os
@@ -35,15 +36,15 @@ def backup(filepath):
 
     if not os.path.exists(target):
         zip = zipfile.ZipFile(target, 'a', ZIP_DEFLATED)
-        print u'Finding files ...'
+        print u'正在查找已有文件。。。'
         file = GetFileList(from_dir, [])
-        print u'Zipping...'
+        print u'正在压缩。。。'
         for f in file:
             zip.write(f)
-        print u'Done.'
+        print u'压缩完成。。。'
         zip.close()
     else:
-        print u'Having Backups.'
+        print u'已有备份。。。'
 
     os.chdir(to_dir)
     list_file = os.listdir(to_dir)
@@ -59,3 +60,5 @@ if __name__ == '__main__':
 
     if os.path.exists('G:') == True:
         backup('D')
+    else:
+        print u'没有插入U盘'
