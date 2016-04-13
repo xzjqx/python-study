@@ -7,7 +7,6 @@ import zipfile
 import glob
 from zipfile import ZIP_DEFLATED
 
-
 def GetFileList(dir, fileList):
     newDir = dir
     if os.path.isfile(dir):

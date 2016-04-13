@@ -22,5 +22,4 @@ for page in range(1001,pageNum+1001):
 	fo = open("C:\\Users\\xzjqx\\Desktop\\Python\\toj\\problem%d"%page, "wb")
 	fo.write(result)
 
-
 #print result
