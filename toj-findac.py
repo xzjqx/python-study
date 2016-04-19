@@ -74,6 +74,6 @@ for sid in run_id:
     response = urllib2.urlopen(request)
     soup = bs4.BeautifulSoup(response.read(), "lxml")
     pid = soup.select('a')[8].get_text()
-    code = soup.select('pre')[0].get_text()
+    code = soup.select('pre')[0].get_text().encode('utf-8')
     fo = open(to_dir + '\\' + pid + u'.cpp', "wb")
     fo.write(code)
