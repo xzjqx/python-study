@@ -24,6 +24,7 @@ passwd = getpass.getpass('Please Input Your Password: ')
 print 'Please Input Your Target Directory: ',
 to_dir = raw_input()
 
+
 #Verify Your Username
 print 'Verifying Your Username...',
 sid_url = "http://acm.tju.edu.cn/toj/status.php?accept=1&user=%s" % (user_id)
